@@ -2,6 +2,10 @@
 
 监听 QQ 群/私聊中的**金数据（Jinshuju）**报名链接，自动打开表单、填写个人信息并提交，适用于校内志愿活动抢报名场景。
 
+下载链接：https://drive.google.com/file/d/1NfC_Suu07N7CzY6P02uOGZgU3JigcETv/view?usp=sharing
+
+> 免责声明：本工具仅供**个人学习与研究**使用，请遵守学校规定与金数据平台使用条款。
+
 ## 工作原理
 
 ```
@@ -122,6 +126,49 @@ Volunteer/
 2.如果有满足的志愿，就会进行监听，然后在浏览器小窗口进行处理，可以看到报名的过程
 <img width="1619" height="992" alt="image" src="https://github.com/user-attachments/assets/f2d72d5f-09e8-4b25-99f5-76ba6e6b3b25" />
 
+
+## 常见问题
+
+### 1. 启动时报错「Missing auto_signup.exe」
+
+说明后端未打包。请运行 `build_backend.bat`，或从发布包中复制完整的 `backend/` 目录。
+
+### 2. 后端启动失败 / 浏览器打不开
+
+- 确认 `backend/browsers/` 目录存在且含 Chromium
+- 重新运行 `build_backend.bat` 中的浏览器安装步骤
+- 检查杀毒软件是否拦截
+
+### 3. QQ 有链接但后端无反应
+
+- 确认 NapCat 已登录且在线
+- 检查 `onebot11_*.json` 中 `httpClients` 的 `url` 是否为 `http://127.0.0.1:8000/onebot`，且 `enable` 为 `true`
+- 确认链接域名属于 `jinshuju.com` 或 `jsjform.com`
+- 查看 `tasks.jsonl` 是否有 `onebot_message_ignored` 记录
+
+### 4. 表单填写失败 / 单选未命中
+
+- 对照金数据表单，检查 `config.json` 中选项文字是否完全一致
+- `activity_name` 可设为数组，按优先级排列多个候选活动名
+- 查看 `screenshots/` 下失败截图定位问题
+- 首次调试建议设 `"auto_submit": false`，确认填写正确后再开启自动提交
+
+### 5. 同一链接重复处理
+
+默认 30 分钟内（`dedup_ttl_seconds`）已成功或排队中的链接会被跳过。如需再次报名，等待 TTL 过期或重启后端。
+
+### 6. 端口被占用
+
+修改 `config.json` 中 `settings.port`，并同步修改 NapCat OneBot 配置中的 `url` 端口。
+
+---
+
+## 注意事项
+
+- 本工具仅供**个人学习与研究**使用，请遵守学校规定与金数据平台使用条款。
+- `config.json` 含个人敏感信息，请勿上传至公开仓库或分享给他人。
+- 自动抢报名存在失败风险（网络延迟、表单变更、名额已满等），建议保留手动报名作为备选。
+- NapCat 使用非官方 QQ 协议，存在账号风险，请自行评估。
 
 
    

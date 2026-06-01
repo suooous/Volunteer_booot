@@ -112,13 +112,16 @@ Volunteer/
    - 按页面提示扫码或输入账号登录
   <img width="1490" height="471" alt="image" src="https://github.com/user-attachments/assets/b20ca8c7-c3e8-48e3-aeda-260583fed106" />
 
-4. 首次使用该脚本需要配置Napcat
-   - 网络配置 -> 新建 -> HTTP客户端
-   <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/c289beaa-d8ac-470d-82bc-aeddb7be657c" />
-  - 配置的信息照着下面的配置即可，填写完成之后保存即可
-   <img width="793" height="797" alt="image" src="https://github.com/user-attachments/assets/0b43e97b-f5ef-44da-959d-7a38e41c7b97" />
-  - 配置成功就是这个页面
-    <img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/afebbcd9-d46c-4a2f-9206-6fa4d343222e" />
+4. 首次使用该脚本需要配置Napcat</br>
+   (1) 网络配置 -> 新建 -> HTTP客户端</br>
+   
+   <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/c289beaa-d8ac-470d-82bc-aeddb7be657c" /></br>
+   (2) 配置的信息照着下面的配置即可，填写完成之后保存即可</br>
+   
+   <img width="793" height="797" alt="image" src="https://github.com/user-attachments/assets/0b43e97b-f5ef-44da-959d-7a38e41c7b97" /></br>
+   (3) 配置成功就是这个页面</br>
+   
+    <img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/afebbcd9-d46c-4a2f-9206-6fa4d343222e" /></br>
 ### 第三步：报名志愿
 1.这个`backend`终端会时刻监听你的QQ接受的信息
 <img width="1473" height="759" alt="image" src="https://github.com/user-attachments/assets/d1a0bab6-4797-494d-9548-d173e5b1ef44" />
